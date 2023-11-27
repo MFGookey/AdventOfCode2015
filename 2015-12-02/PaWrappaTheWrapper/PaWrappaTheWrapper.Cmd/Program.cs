@@ -17,9 +17,14 @@ namespace PaWrappaTheWrapper.Cmd
     {
       var filePath = "./input";
       var reader = new FileReader();
+      var testCalc = new WrappingCalculator(new[] { "2x3x4", "1x1x10" });
+      Console.WriteLine(testCalc.GetTotalWrappingArea());
+      Console.WriteLine(testCalc.GetTotalRibbonLength());
+
       var calc = new WrappingCalculator(reader.ReadFileByLines(filePath));
       
       Console.WriteLine(calc.GetTotalWrappingArea());
+      Console.WriteLine(calc.GetTotalRibbonLength());
       _ = Console.ReadLine();
     }
   }

@@ -55,5 +55,25 @@ namespace PaWrappaTheWrapper.Core
       var areas = this.GetFaceAreas();
       return areas.Sum() * 2 + areas.Min();
     }
+
+    private IEnumerable<int> GetFacePerimeters()
+    {
+      return new[]
+      {
+        2 * (this.Length + this.Width),
+        2 * (this.Length + this.Height),
+        2 * (this.Width + this.Height)
+      };
+    }
+
+    private int GetVolume()
+    {
+      return this.Length * this.Width * this.Height;
+    }
+
+    public int GetRibbonLength()
+    {
+      return this.GetFacePerimeters().Min() + this.GetVolume();
+    }
   }
 }

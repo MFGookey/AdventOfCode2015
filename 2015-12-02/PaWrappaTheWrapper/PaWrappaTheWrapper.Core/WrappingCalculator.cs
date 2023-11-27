@@ -27,5 +27,16 @@ namespace PaWrappaTheWrapper.Core
 
       return result;
     }
+
+    public long GetTotalRibbonLength()
+    {
+      long result = 0;
+      foreach (var gift in _gifts)
+      {
+        result += gift.GetRibbonLength();
+      }
+
+      return result;
+    }
   }
 }
