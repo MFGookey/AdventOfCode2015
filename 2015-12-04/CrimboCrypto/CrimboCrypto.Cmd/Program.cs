@@ -21,6 +21,7 @@ namespace CrimboCrypto.Cmd
       string seed = "yzbqklnj";
       miner = new HashMiner(seed);
       Console.WriteLine(miner.GetSeedModifier(miner.HashPrefixEvaluator("00000")));
+      Console.WriteLine(miner.GetSeedModifier(miner.HashPrefixEvaluator("000000")));
       _ = Console.ReadLine();
     }
   }
